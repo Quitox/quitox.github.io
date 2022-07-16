@@ -61,13 +61,16 @@ footer a{
   padding: 0 5px;
   text-shadow: #303123 5px 0px;
 }
-@media (max-withd: 500px){
-  h1{
-    font-size: 2rem;
-  }
-}
-@media (max-withd: 800px){
+/*----mediaQuery----*/
+
+@media (max-width: 600px) {
   h1{
     font-size: 4rem;
+  }
+}
+
+@media (max-width: 400px) {
+  h1{
+    font-size: 2rem;
   }
 }
