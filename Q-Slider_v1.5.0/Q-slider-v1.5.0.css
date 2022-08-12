@@ -1,0 +1,159 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+.slider{
+    width: 100%;
+    height: 500px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    overflow: hidden; /* Importante para tapar el exceso de box-shadow */
+}
+.slider__contendor{
+    height: 100%;
+    position: relative;
+    width: 80%;
+    overflow: hidden;
+    background-image: url(/img/Homer-clock.gif);
+    background-repeat: no-repeat;
+    background-position: center right;
+}
+.slider__item{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    box-sizing: border-box;
+    padding: 1% 3%;
+    margin: 0;
+    transform: translateX(-100%);
+    box-shadow: 0px 0px 0px 0px transparent;
+    transition: transform 1s, box-shadow 1500ms;
+
+    
+}
+
+.slide-1{
+    background-color: lightgreen;
+}
+.slide-2{
+    background-color: lightslategray;
+}
+.slide-3{
+    background-color: lightsalmon;
+}
+.slide-4{
+    background-color: rgb(142, 122, 255);
+}
+.slide-5{
+    background-color: rgb(255, 122, 122);
+}
+.showing-prev{
+    transform: translateX(-110%);
+}
+.showing-next{
+    transform: translateX(110%);
+}
+/* Efecto */
+.showing{
+    transform: translateX(0);
+    box-shadow: 0px 0px 20px 0px #2f00ff;
+    z-index: 10;
+}
+
+
+
+/* Botones */
+.slider__buttons{
+    position: absolute;
+    width: 100%;
+    bottom: .25rem;
+    display: flex;
+    justify-content: center;
+    gap: .5rem;
+    box-sizing: border-box;
+    padding: 0 calc(10% + 2%);
+    z-index: 1000;   
+
+}
+.slider__btn{
+    /* text-align: center; */
+    /* padding: 0 .3rem; */
+    width: .8em;
+    height: .8rem;
+    background-color: lavender;
+    border-radius: 100%;
+    box-shadow: 0px 0px 0 1px #cdcdcd;
+}
+.slider__btn:hover{
+    background-color: rgb(151, 151, 250);
+    box-shadow: 0px 0px 0 1px #8f8f8f;
+}
+.btn-show{
+    background-color: rgb(183, 183, 253);
+    box-shadow: 0px 0px 0 1px #5c5c5c;
+}
+.slider__btn-play{
+    color: rgb(170, 170, 170);
+    /* background-color: red; */
+    position: absolute;
+    right: 0%;
+    bottom: 0%;
+    margin: 0 calc(10% + 2%);
+}
+.btn-play-on{
+    text-shadow: 1px 1px 2px #831313;
+    color: blue;
+    font-weight: 900;
+}
+.slider__btn-prev, .slider__btn-next {
+    position: absolute;
+    z-index: 1000;
+    top: 0;
+    text-align: center;
+    height: 100%;
+    width: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.slider__btn-prev{
+    left: 0;
+}
+.slider__btn-next{
+    right: 0;
+}
+.slider__btn-prev:hover, .slider__btn-next:hover{
+    /* background-color: rgba(49, 139, 151, 0.685); */
+    font-size: 900;
+    box-shadow: 
+    0px 0px 50px 0px #110936,
+    0px 0px 0px 1px rgb(2, 2, 46),
+    inset 0px -10px 10px 0px rgb(0, 0, 0,.5),
+    inset 0px 10px 10px 0px rgb(0, 0, 0,.5);
+
+}
+@media only screen and (max-width: 400px) {
+    .slider__contendor{
+        width: 100%;
+    }
+    .slider__btn-prev:hover{
+        box-shadow: 
+        /* 0px 0px 50px 0px #110936, */
+        /* 0px 0px 0px 1px rgb(2, 2, 46), */
+        /* inset +10px -0px 10px 0px rgb(0, 0, 0,.5), */
+        inset +10px 0px 10px 0px rgb(0, 0, 0,.5);
+    
+    }
+    .slider__btn-next:hover{
+        box-shadow: 
+        /* 0px 0px 50px 0px #110936, */
+        /* 0px 0px 0px 1px rgb(2, 2, 46), */
+        /* inset +10px -0px 10px 0px rgb(0, 0, 0,.5), */
+        inset -10px 0px 10px 0px rgb(0, 0, 0,.5);
+    
+    }
+
+
+}
