@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q-Memotest</title>
+    <link rel="stylesheet" href="Q-memotest.css">
+    
+    <script src="fontawesome/js/all.js"></script>
+
+</head>
+<body>
+    <header>
+        <div class="display gamer__1">
+            <img src="img/boy-face-avatar-cartoon-free-vector.jpg" alt="Gamer 1" class="avatar">
+            <div class="data">
+                <h2>YO</h2>
+                <label for="gamer__1-score">Score Player 1: </label>
+                <input type="text" class="gamer__1-score" value="125" readonly>
+            </div>
+            <img src="/img/blue_flag.png" alt="" class="flag">
+        </div>
+        
+        <h1 id="title" class="title">Q-Memotest</h1>
+
+        <div class="display gamer__2">
+            <img src="img/boy-face-avatar-cartoon-free-vector.jpg" alt="Gamer 2" class="avatar">
+            <div class="data">
+                <h2>Mi otro Yo</h2>
+                <label for="gamer__2-score">Score Player 2: </label>
+                <input type="text" class="gamer__2-score" value="250" readonly>
+            </div>
+            <img src="/img/red_flag.png" alt="" class="flag">
+        </div>
+    </header>
+    <section class="game">
+        <div class="game__container">
+        <!-- Ejemplo de carta HTML -->
+        <!-- <div id="card-EJ-1" class="game__card" val="EJ">
+                <div class="card__face card__face--front">
+                    <h2>Q-Memotest</h2>
+                </div>
+                <div class="card__face card__face--back">
+                    <i class="fa-solid fa-home"></i>
+                </div>
+            </div> -->
+        </div>
+    </section>
+    <section class="end-game">
+        <h1 class="title">Fin del juego</h1>
+        <h2>Ganador es <span class="ganador">YO</span>!</h2>
+        <button> Otra Ronda?? </button>
+    </section>
+    <script src="Q-memotest.js"></script>
+</body>
+</html>

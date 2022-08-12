@@ -1,0 +1,240 @@
+body{
+    padding: 0; margin: 0;
+}
+header{
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-image: linear-gradient(to left, red, white 45%, white 55%,  blue);
+}
+/* header > *{
+    outline: 1px solid green ;
+}
+.display> *{
+    outline: 1px solid green ;
+} */
+.title{
+    padding: 0 40px;
+}
+.display{
+    margin: auto 2px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content:flex-start;
+    align-items: center;
+}
+
+.display.gamer__2{
+    justify-content: flex-end;
+}
+.gamer__2 .avatar{
+    order: 3;
+}
+.gamer__2 .flag{
+    order: 1;
+}
+.gamer__2 .data{
+    order: 2;
+}
+.display .data{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+.data > h2{
+    text-align: center;
+}
+.data > input{
+    text-align: inherit;
+    font-weight: 600;
+    border: none;
+    background: transparent;
+    margin-bottom: .8em;
+}
+.display > img{
+    max-width: 5em;
+}
+
+.display.gamer__1 > img:last-child{
+    /* max-width: 5em; */
+    transform: scale(132%);
+}
+.anim1{
+    animation: late1 1s ease 0s infinite ;
+    animation-fill-mode:both;
+    background-image: radial-gradient(circle , white, transparent 50%);
+}
+.anim2{
+    animation: late2 1s ease 0s infinite ;
+    animation-fill-mode:both;
+    background-image: radial-gradient(circle , white, transparent 55%);
+
+}
+
+/* Zona de juego */
+.game{
+    background-color: aqua;
+    margin: 0px auto 10px;
+    padding: 10px 10vw;
+    min-width: 500px;
+}
+
+.game__container{
+    display: grid;
+    grid-template-columns: repeat(7,150px);
+    grid-template-rows: repeat(7, 200px);
+    justify-content: center;
+    align-tracks: center;
+    height: 90vh;
+    gap: 10px;
+
+    perspective: 1200px;/*3D EFFECT*/
+}
+
+.game__card{
+    border: 3px solid red;
+    text-align: center;
+    background: blue;
+    box-shadow: 0 0 20px 0px #f3f3f3;
+    cursor: pointer;
+    transition: transform .85s;
+
+    transform-style: preserve-3d;/*3D EFFECT*/
+}
+.flip{
+    transform: rotateY(-180deg);
+}
+
+
+.card__face{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+    backface-visibility: hidden;/*3D EFFECT*/
+}
+
+/*CARD: FACE FRONTAL*/
+.card__face--front{
+    overflow: hidden;
+    background-image: linear-gradient(180deg, coral, black);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* font-size: .7%; */
+}
+.card__face--front h2{
+    margin: 0; padding: 0;
+
+    text-shadow: 1px 1px 5px greenyellow;
+    text-decoration: underline;
+    font-weight: 900;
+    letter-spacing: .3em;
+    /* font-size: .75em; */
+}
+
+/*CARD: FACE BACK*/
+.card__face--back{
+    background-image: linear-gradient(180deg, coral, rgb(255, 255, 255));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    transform: rotateY(180deg);/*3D EFFECT*/
+}
+.card__face--size{/* Se utiliza con Font AWESOME */
+    font-size: 5rem;
+}
+
+
+.card-ok-1{
+    background-image: none;
+    background-color: rgba(67,67,255,0.5);
+}
+.card-ok-2{
+    background-image: none;
+    background-color: rgba(255, 67, 67, 0.5);
+}
+
+.end-game{
+    top: 25%;
+    bottom: 25%;
+    left: 0;
+    right: 0;
+    z-index: 3000;
+    margin: 0% auto;/* interesante, va conjuto con left y right*/
+    background-color: red;
+    display: none ; /*flex*/
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.end-game .title{
+    font-size: 3rem;
+}
+.end-game .ganador{
+    font-size: 3rem;
+    color: white;
+    padding-inline-end: .2em;
+}
+
+.end-game button{
+    font-size: 1.2em;
+    line-height: 1.5em;
+    padding: .15em .5em;
+}
+.end-game button:hover{
+    background-color: green;
+}
+
+@media screen and (max-width: 1400px) {
+    .card__face--front{
+        font-size: 12px;
+    }
+    .card__face--front h2{
+        text-shadow: 1px 1px 3px greenyellow;
+        font-weight: 900;
+        letter-spacing: .15em;
+        transform: rotateZ(-45deg);
+    }
+    .card__face--size{/* Se utiliza con Font AWESOME */
+        font-size: 3rem;
+    }
+
+}
+@media screen and (max-width: 800px) {
+    .card__face--front h2{
+        font-size: .9em;
+        letter-spacing: .1em;
+        text-shadow: 1px 1px 3px #fff;
+        
+    }
+}
+@media screen and (max-width: 700px) {
+
+    .display > img{
+        display: none;
+        max-width: 3em;
+    }
+}
+
+@keyframes late1 {
+    0%{
+        transform: scale(132%);
+    }
+    100%{
+        transform: scale(150%);
+    }
+}
+@keyframes late2 {
+    0%{
+        transform: scale(100%);
+    }
+    100%{
+        transform: scale(115%);
+    }
+}
