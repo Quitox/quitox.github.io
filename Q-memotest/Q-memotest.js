@@ -289,9 +289,8 @@ function voltearCarta (e){ //el parametro "e" al parecer pasa por defecto al ser
         }
     }
 }
-/* Funcionalidad a la selección de cartas */
+/* Genera los eventos a las cartas */
 function addEventCard(){
-
     var cards = document.querySelectorAll(".game__card");
     cards.forEach(card => {
         card.addEventListener("click", voltearCarta); //funciona //Debe ser invocada a modo de funcion explicita para poder removerla luego.
@@ -301,7 +300,7 @@ function addEventCard(){
 function finalizacion(puntaje1, puntaje2){
 
     /*Define quien gana */
-    if( puntaje1 > puntaje2){
+    if(puntaje1 > puntaje2){
         console.log("Ganador Jugador 1!");
         endGame.children[1].children[0].innerHTML = "Yo";
         endGame.style.backgroundColor = "blue";
@@ -330,13 +329,12 @@ function restart(){
     
     crearTablero(colTotal, rowTotal);
     addEventCard();
-
     
     score1.setAttribute("value", 0);
     score2.setAttribute("value", 0);
 
     turno = jugadores[0];
-    flag1.classList.remove("anim1");
+    flag1.classList.add("anim1");
 
 }
 
