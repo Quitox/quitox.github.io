@@ -16,7 +16,7 @@ body{
     position: relative;
     width: 80%;
     overflow: hidden;
-    background-image: url(/img/Homer-clock.gif);
+    background-image: url(./img/Homer-clock.gif);
     background-repeat: no-repeat;
     background-position: center right;
 }
